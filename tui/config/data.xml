@@ -1,0 +1,26 @@
+<tui on_visit="mt_visit_data">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Data" border="single" class="nav"/>
+      <pane id="main" split="v" weight="87" border="none">
+        <pane id="da_ctl" split="grid" rows="1" cols="2" col_weights="1 3" weight="10" max_height="1" border="none" class="toolbar">
+          <pane id="da_c1" border="none" hpad="1" class="toolbar"/>
+          <pane id="da_c2" border="none" hpad="1" class="toolbar"/>
+        </pane>
+        <pane id="da_tab" weight="19" title="Newest 400 tests of the current filter" border="single" class="panel" hpad="1"/>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <button id="da_export" pane="da_c1" row="0" text="[ Export CSV… ]" action="mt_data_export" class="success_button" align="fill"/>
+  <label  id="da_note"   pane="da_c2" row="0" text="Export writes every filtered test with all derived columns." class="muted_label"/>
+  <table  id="da_table"  pane="da_tab" row="0" rows="0" columns="Time"/>
+</tui>

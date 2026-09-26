@@ -1,0 +1,9 @@
+2026-09-26T20:20:18 INFO  [1/7] Configuration
+2026-09-26T20:20:18 INFO  name: monkeytype_analyzer
+2026-09-26T20:20:18 INFO  version: 0.0.0-2  (default)
+2026-09-26T20:20:18 INFO  build: 2  (git commit count)
+2026-09-26T20:20:18 INFO  signer: SHA256:gICXk6EL63NOM1ESWd4af/nLGnrjxbtG1CqYmKKpQpc
+2026-09-26T20:20:18 INFO  key: /home/dino/.config/DABT/keys/dabt_ed25519
+2026-09-26T20:20:18 INFO  [2/7] Collecting files
+2026-09-26T20:20:18 INFO  ok: 28 files
+2026-09-26T20:20:18 ERROR no entry script: set entry in dabt.pkg (or .dabt.metadata)

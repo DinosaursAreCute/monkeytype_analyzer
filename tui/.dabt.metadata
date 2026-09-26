@@ -1,0 +1,10 @@
+# DABT application metadata - read by `dabt app install`
+name        = monkeytype
+title       = Monkeytype Analyzer
+description = Statistics and group detection for Monkeytype result exports (needs python3 + ../mt_analysis.py)
+version     = 0.1.0
+entry       = mt_tui.sh
+own_dir     = yes
+include     = ../data 
+include     = ../METHODS.md
+follow_symlinks = true

@@ -1,0 +1,13 @@
+# dabt.pkg - packaging for "dabt build". The analysis backend and the methods text live one folder up (shared with
+# the Qt app), so they are pulled in from outside the project: build with  dabt build --allow-external
+exclude = ["__pycache__", "*.pyc", "*.log"]
+follow_symlinks=true
+[[include]]
+type   = "file"
+source = "../mt_analysis.py"
+target = "mt_analysis.py"
+
+[[include]]
+type   = "file"
+source = "../METHODS.md"
+target = "METHODS.md"

@@ -1,0 +1,27 @@
+2026-09-26T20:20:46 INFO  [1/7] Configuration
+2026-09-26T20:20:46 WARN  dabt.pkg: unknown key 'fopllow_symlinks' (ignored)
+2026-09-26T20:20:46 INFO  name: monkeytype
+2026-09-26T20:20:46 INFO  version: 0.1.0-0  (.dabt.metadata)
+2026-09-26T20:20:46 INFO  build: 0  (none (0))
+2026-09-26T20:20:46 INFO  entry: mt_tui.sh
+2026-09-26T20:20:46 INFO  signer: SHA256:gICXk6EL63NOM1ESWd4af/nLGnrjxbtG1CqYmKKpQpc
+2026-09-26T20:20:46 INFO  key: /home/dino/.config/DABT/keys/dabt_ed25519
+2026-09-26T20:20:46 INFO  [2/7] Collecting files
+2026-09-26T20:20:47 INFO  ok: 17 files
+2026-09-26T20:20:47 INFO  [3/7] Changelog and metadata
+2026-09-26T20:20:47 INFO  ok: .dabt.metadata: monkeytype 0.1.0
+2026-09-26T20:20:47 WARN  no changelog configured: no News for this package
+2026-09-26T20:20:47 INFO  [4/7] Manifest
+2026-09-26T20:20:47 INFO  progress: Hashing files (17)
+2026-09-26T20:20:47 INFO  ok: Hashed 17 files
+2026-09-26T20:20:47 INFO  ok: MANIFEST: 6 top-level entries
+2026-09-26T20:20:47 INFO  [5/7] Signing
+2026-09-26T20:20:47 INFO  run: dapk.sign.sign /tmp/dapk_build.lcAu5C/monkeytype-0.1.0-0/MANIFEST /home/dino/.config/DABT/keys/dabt_ed25519
+2026-09-26T20:20:47 INFO  ok: Signing MANIFEST
+2026-09-26T20:20:47 INFO  [6/7] Packing
+2026-09-26T20:20:47 INFO  progress: Packing files (21)
+2026-09-26T20:20:47 INFO  ok: Packed 21 entries
+2026-09-26T20:20:47 INFO  ok: monkeytype-0.1.0-0.dapk  (37658 bytes)
+2026-09-26T20:20:47 INFO  sha256: ac40431c230fa74a8d86e202ff35075a2cfc04d2f39e1f976cb29b4952b0b0ef
+2026-09-26T20:20:47 INFO  [7/7] Release notes
+2026-09-26T20:20:47 INFO  ok: RELEASE_NOTES.md

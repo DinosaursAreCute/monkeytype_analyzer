@@ -1,0 +1,21 @@
+<tui on_visit="mt_visit_scan">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Factor scan" border="single" class="nav"/>
+      <pane id="main" split="v" weight="87" border="none">
+        <pane id="sc_tab"  weight="9"  title="Every factor, same adjusted model (Enter: open in Groups)" border="single" class="panel" hpad="1"/>
+        <pane id="sc_plot" weight="11" title="Variance explained" border="single" class="panel" hpad="1" scroll="v"/>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <table id="sc_table" pane="sc_tab" row="0" rows="0" columns="Factor" action="mt_scan_open"/>
+</tui>

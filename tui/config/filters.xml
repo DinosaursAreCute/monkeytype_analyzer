@@ -1,0 +1,55 @@
+<tui on_visit="mt_visit_filters">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Filters" border="single" class="nav"/>
+      <pane id="main" split="v" weight="87" border="none">
+        <pane id="fl_top" split="grid" rows="2" cols="4" col_weights="4 3 3 2" weight="15" max_height="2" border="none" class="toolbar">
+          <pane id="fl_c1" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c2" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c3" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c4" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c5" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c6" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c7" border="none" hpad="1" class="toolbar"/>
+          <pane id="fl_c8" border="none" hpad="1" class="toolbar"/>
+        </pane>
+        <pane id="fl_lists" split="grid" rows="2" cols="3" weight="20" border="none">
+          <pane id="fl_p_cond"       title="Condition · enter toggles · a all · n none" border="single" class="panel"/>
+          <pane id="fl_p_tag"        title="Tag combo"  border="single" class="panel"/>
+          <pane id="fl_p_label"      title="Label"      border="single" class="panel"/>
+          <pane id="fl_p_difficulty" title="Difficulty" border="single" class="panel"/>
+          <pane id="fl_p_files"      title="Files (a test counts if it is in any ticked file)" border="single" class="panel"/>
+          <pane id="fl_p_help"       title="How the filter works" border="single" class="panel" hpad="1"/>
+        </pane>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <select   id="fl_metric" pane="fl_c1" row="0" label="Metric:" items="WPM" action="mt_filters_metric"/>
+  <input    id="fl_from"   pane="fl_c2" row="0" label="From:" label_width="6" placeholder="YYYY-MM-DD" submit="mt_filters_dates"/>
+  <input    id="fl_to"     pane="fl_c3" row="0" label="To:"   label_width="4" placeholder="YYYY-MM-DD" submit="mt_filters_dates"/>
+  <button   id="fl_apply"  pane="fl_c4" row="0" text="[ Apply ]" action="mt_filters_apply" class="success_button" align="fill"/>
+  <checkbox id="fl_afk"    pane="fl_c5" row="0" label="Exclude tests with AFK time" action="mt_filters_flag" class="check"/>
+  <checkbox id="fl_outl"   pane="fl_c6" row="0" label="Exclude outliers (|z|>4)" action="mt_filters_flag" class="check"/>
+  <label    id="fl_range"  pane="fl_c7" row="0" text="" class="muted_label"/>
+  <button   id="fl_reset"  pane="fl_c8" row="0" text="[ Reset ]" action="mt_filters_reset" class="danger_button" align="fill"/>
+  <table id="fl_t_cond"       pane="fl_p_cond"       row="0" rows="0" columns="✓|Value|n" action="mt_filters_toggle"/>
+  <table id="fl_t_tag"        pane="fl_p_tag"        row="0" rows="0" columns="✓|Value|n" action="mt_filters_toggle"/>
+  <table id="fl_t_label"      pane="fl_p_label"      row="0" rows="0" columns="✓|Value|n" action="mt_filters_toggle"/>
+  <table id="fl_t_difficulty" pane="fl_p_difficulty" row="0" rows="0" columns="✓|Value|n" action="mt_filters_toggle"/>
+  <table id="fl_t_files"      pane="fl_p_files"      row="0" rows="0" columns="✓|Value|n" action="mt_filters_toggle"/>
+  <label id="fl_h1" pane="fl_p_help" row="0" text="Enter or double-click toggles a row." class="muted_label"/>
+  <label id="fl_h2" pane="fl_p_help" row="1" text="a / n: include all / none of a list." class="muted_label"/>
+  <label id="fl_h3" pane="fl_p_help" row="3" text="Different conditions (mode, custom text)" class="muted_label"/>
+  <label id="fl_h4" pane="fl_p_help" row="4" text="are not comparable: keep one." class="muted_label"/>
+  <label id="fl_h5" pane="fl_p_help" row="6" text="The status bar shows the live count." class="muted_label"/>
+  <label id="fl_h6" pane="fl_p_help" row="7" text="Apply opens the Overview." class="muted_label"/>
+</tui>

@@ -1,0 +1,33 @@
+<tui on_visit="mt_visit_detect">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Auto-detect" border="single" class="nav"/>
+      <pane id="main" split="v" weight="87" border="none">
+        <pane id="dt_ctl" split="grid" rows="1" cols="5" col_weights="3 3 3 2 3" weight="10" max_height="1" border="none" class="toolbar">
+          <pane id="dt_c1" border="none" hpad="1" class="toolbar"/>
+          <pane id="dt_c2" border="none" hpad="1" class="toolbar"/>
+          <pane id="dt_c3" border="none" hpad="1" class="toolbar"/>
+          <pane id="dt_c4" border="none" hpad="1" class="toolbar"/>
+          <pane id="dt_c5" border="none" hpad="1" class="toolbar"/>
+        </pane>
+        <pane id="dt_tab"  weight="7"  title="Detected groups (select a row, then label it)" border="single" class="panel" hpad="1"/>
+        <pane id="dt_plot" weight="13" title="Regimes, change points, clusters" border="single" class="panel" hpad="1" scroll="v"/>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <input  id="dt_sens" pane="dt_c1" row="0" label="Sensitivity:" label_width="13" placeholder="1" submit="mt_detect_params"/>
+  <input  id="dt_k"    pane="dt_c2" row="0" label="Clusters k:" label_width="12" placeholder="0 = auto" submit="mt_detect_params"/>
+  <select id="dt_view" pane="dt_c3" row="0" label="Show:" items="Regimes|Clusters|Anomalous sessions" value="Regimes" action="mt_detect_view"/>
+  <button id="dt_go"   pane="dt_c4" row="0" text="[ Recompute ]" action="mt_detect_params" class="success_button" align="fill"/>
+  <button id="dt_lbl"  pane="dt_c5" row="0" text="[ Label selected ]" action="mt_detect_label" class="info_button" align="fill"/>
+  <table  id="dt_table" pane="dt_tab" row="0" rows="0" columns="Regime" action="mt_detect_label"/>
+</tui>

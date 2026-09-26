@@ -1,0 +1,31 @@
+<!-- Shared by every page: status bar, navigation, footer and keys. The page declares the panes st_main, st_busy, nav. -->
+<footer items="@tui.action.quit|Quit;alt+m|Metric;f5|Refresh;alt+1..9|Pages;@tui.palette.open|Commands"/>
+<label  id="mt_status" pane="st_main" row="0" text="starting…" class="bar"/>
+<label  id="mt_busy"   pane="st_busy" row="0" text="" align="right" class="busy"/>
+
+<button id="nav_overview" pane="nav" row="0"  text=" Overview"      page="overview.xml" class="nav_link" align="fill"/>
+<button id="nav_groups"   pane="nav" row="1"  text=" Groups"        page="groups.xml"   class="nav_link" align="fill"/>
+<button id="nav_scan"     pane="nav" row="2"  text=" Factor scan"   page="scan.xml"     class="nav_link" align="fill"/>
+<button id="nav_detect"   pane="nav" row="3"  text=" Auto-detect"   page="detect.xml"   class="nav_link" align="fill"/>
+<button id="nav_dyn"      pane="nav" row="4"  text=" Dynamics"      page="dynamics.xml" class="nav_link" align="fill"/>
+<label  id="nav_div"      pane="nav" row="5"  text="──────────"                          class="nav_div"/>
+<button id="nav_filters"  pane="nav" row="6"  text=" Filters"       page="filters.xml"  class="nav_link" align="fill"/>
+<button id="nav_tags"     pane="nav" row="7"  text=" Tags & labels" page="tags.xml"     class="nav_link" align="fill"/>
+<button id="nav_data"     pane="nav" row="8"  text=" Data"          page="data.xml"     class="nav_link" align="fill"/>
+<button id="nav_sources"  pane="nav" row="9"  text=" Sources"       page="sources.xml"  class="nav_link" align="fill"/>
+<button id="nav_methods"  pane="nav" row="10" text=" Methods"       action="mt_methods" class="nav_link" align="fill"/>
+<button id="nav_metric"   pane="nav" row="12" text=" Metric…"       action="mt_metric_choose" class="nav_link" align="fill"/>
+<button id="nav_quit"     pane="nav" row="13" text=" Quit"          action="tui.action.quit"  class="danger_button" align="fill"/>
+
+<bind key="alt+1" action="tui.action.goto overview.xml" desc="Overview"/>
+<bind key="alt+2" action="tui.action.goto groups.xml"   desc="Groups"/>
+<bind key="alt+3" action="tui.action.goto scan.xml"     desc="Factor scan"/>
+<bind key="alt+4" action="tui.action.goto detect.xml"   desc="Auto-detect"/>
+<bind key="alt+5" action="tui.action.goto dynamics.xml" desc="Dynamics"/>
+<bind key="alt+6" action="tui.action.goto filters.xml"  desc="Filters"/>
+<bind key="alt+7" action="tui.action.goto tags.xml"     desc="Tags and labels"/>
+<bind key="alt+8" action="tui.action.goto data.xml"     desc="Data"/>
+<bind key="alt+9" action="tui.action.goto sources.xml"  desc="Data sources"/>
+<bind key="alt+m" action="mt_metric_choose"             desc="Choose the metric"/>
+<bind key="f5"    action="mt_refresh"                   desc="Recompute this page"/>
+<bind key="alt+n" action="tui.action.focus_pane nav"    desc="Focus the menu"/>

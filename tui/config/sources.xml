@@ -1,0 +1,33 @@
+<tui on_visit="mt_visit_sources">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Sources" border="single" class="nav"/>
+      <pane id="main" split="v" weight="87" border="none">
+        <pane id="sr_ctl" split="grid" rows="1" cols="5" col_weights="8 2 2 2 2" weight="10" max_height="1" border="none" class="toolbar">
+          <pane id="sr_c1" border="none" hpad="1" class="toolbar"/>
+          <pane id="sr_c2" border="none" hpad="1" class="toolbar"/>
+          <pane id="sr_c3" border="none" hpad="1" class="toolbar"/>
+          <pane id="sr_c4" border="none" hpad="1" class="toolbar"/>
+          <pane id="sr_c5" border="none" hpad="1" class="toolbar"/>
+        </pane>
+        <pane id="sr_tab"  weight="35" title="Data sources (saved; Enter removes)" border="single" class="panel" hpad="1"/>
+        <pane id="sr_info" weight="55" title="Loaded data" border="single" class="panel" hpad="1" scroll="v"/>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <input  id="sr_path"   pane="sr_c1" row="0" label="Path:" label_width="6" placeholder="~/Downloads/results.csv or a folder, Enter adds" submit="mt_source_submit"/>
+  <button id="sr_add"    pane="sr_c2" row="0" text="[ Add ]"      action="mt_source_add_btn" class="success_button" align="fill"/>
+  <button id="sr_browse" pane="sr_c3" row="0" text="[ Browse… ]"  action="mt_pick_open"      class="info_button" align="fill"/>
+  <button id="sr_remove" pane="sr_c4" row="0" text="[ Remove ]"   action="mt_source_remove"  class="danger_button" align="fill"/>
+  <button id="sr_reload" pane="sr_c5" row="0" text="[ Reload ]"   action="mt_sources_reload" class="info_button" align="fill"/>
+  <table  id="sr_table"  pane="sr_tab" row="0" rows="0" columns="Path|Kind|CSV|Tests|Status" action="mt_source_remove"/>
+</tui>

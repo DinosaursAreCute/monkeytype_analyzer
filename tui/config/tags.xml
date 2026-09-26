@@ -1,0 +1,39 @@
+<tui on_visit="mt_visit_tags">
+  <script src="mt_callbacks.sh"/>
+  <theme src="theme.css"/>
+
+  <pane id="root" split="v" border="none">
+    <pane id="st" split="h" weight="10" max_height="1" border="none" class="bar">
+      <pane id="st_main" weight="72" border="none" class="bar" hpad="1"/>
+      <pane id="st_busy" weight="28" border="none" class="bar" hpad="1"/>
+    </pane>
+    <pane id="body" split="h" weight="90" border="none">
+      <pane id="nav" weight="13" strict_fit="false" title="Tags & labels" border="single" class="nav"/>
+      <pane id="main" split="h" weight="87" border="none">
+        <pane id="tg_left" split="v" weight="55" border="none">
+          <pane id="tg_tags_ctl" weight="10" max_height="3" border="single" class="panel" hpad="1"/>
+          <pane id="tg_tags_p"   weight="90" title="Tags (Enter: name it)" border="single" class="panel" hpad="1"/>
+        </pane>
+        <pane id="tg_right" split="v" weight="45" border="none">
+          <pane id="tg_new" weight="30" max_height="7" title="Create a label" border="single" class="panel" hpad="1"/>
+          <pane id="tg_lbl_ctl" split="grid" rows="1" cols="2" weight="10" max_height="3" border="single" class="panel">
+            <pane id="tg_l1" border="none" hpad="1"/>
+            <pane id="tg_l2" border="none" hpad="1"/>
+          </pane>
+          <pane id="tg_labels_p" weight="60" title="Labels (your named groups)" border="single" class="panel" hpad="1"/>
+        </pane>
+      </pane>
+    </pane>
+  </pane>
+
+  <include src="_chrome.xml"/>
+  <table  id="tg_tags"   pane="tg_tags_p" row="0" rows="0" columns="Name" action="mt_tag_rename"/>
+  <button id="tg_ren"    pane="tg_tags_ctl" row="0" text="[ Name selected tag… ]" action="mt_tag_rename" class="info_button" align="fill"/>
+  <table  id="tg_labels" pane="tg_labels_p" row="0" rows="0" columns="Label" action="mt_label_rename"/>
+  <button id="tg_lren"   pane="tg_l1" row="0" text="[ Rename… ]" action="mt_label_rename" class="info_button" align="fill"/>
+  <button id="tg_ldel"   pane="tg_l2" row="0" text="[ Delete… ]" action="mt_label_delete" class="danger_button" align="fill"/>
+  <input  id="tg_from"   pane="tg_new" row="0" label="From:" label_width="6" placeholder="YYYY-MM-DD [HH:MM]"/>
+  <input  id="tg_to"     pane="tg_new" row="1" label="To:"   label_width="6" placeholder="YYYY-MM-DD [HH:MM]"/>
+  <button id="tg_range"  pane="tg_new" row="3" text="[ Label this time range… ]" action="mt_label_range" class="success_button" align="fill"/>
+  <button id="tg_filt"   pane="tg_new" row="4" text="[ Label the current filter… ]" action="mt_label_filter" class="info_button" align="fill"/>
+</tui>

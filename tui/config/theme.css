@@ -1,0 +1,39 @@
+/* theme.css - Monkeytype analyzer. Dark, low-chroma panels so the chart colours carry the meaning. */
+.panel        { fg: #c9d6e3; bg: #1c2336; }
+.panel:border { fg: #3b4a63; }
+.panel:focus  { fg: #e2b714; }
+.panel:title  { fg: #e2b714; mods: bold; }
+
+.nav          { fg: #c9d6e3; bg: #1c2336; }
+.nav:border   { fg: #3b4a63; }
+.nav:focus    { fg: #e2b714; }
+.nav:title    { fg: #e2b714; mods: bold; }
+.nav_link       { fg: #c9d6e3; bg: #1c2336; }
+.nav_link:hover { fg: #10131c; bg: #8a93a6; }
+.nav_link:focus { fg: #10131c; bg: #e2b714; mods: bold; }
+.nav_div        { fg: #3b4a63; }
+
+.bar   { fg: #10131c; bg: #e2b714; mods: bold; }
+.busy  { fg: #10131c; bg: #e2b714; mods: bold; }
+.muted_label { fg: #8a93a6; bg: #1c2336; }
+.toolbar     { fg: #c9d6e3; bg: #161b26; }
+
+.success_button       { fg: #10131c; bg: #33cc66; mods: bold; }
+.success_button:hover { fg: #10131c; bg: #4ade80; mods: bold; }
+.success_button:focus { fg: #10131c; bg: #66ff99; mods: bold; }
+.info_button          { fg: #10131c; bg: #8ab4f8; mods: bold; }
+.info_button:hover    { fg: #10131c; bg: #a8c7fa; mods: bold; }
+.info_button:focus    { fg: #10131c; bg: #ffffff; mods: bold; }
+.danger_button        { fg: #ffffff; bg: #a3212f; mods: bold; }
+.danger_button:hover  { fg: #ffffff; bg: #c9303f; mods: bold; }
+.danger_button:focus  { fg: #ffffff; bg: #ff4455; mods: bold; }
+
+.check:checked   { fg: #e2b714; mods: bold; }
+.check:unchecked { fg: #8a93a6; }
+
+.table_head { fg: #e2b714; mods: bold underline; }
+.table_sel  { fg: #10131c; bg: #e2b714; mods: bold; }
+.list_sel   { fg: #10131c; bg: #e2b714; mods: bold; }
+.footer       { fg: #8a93a6; bg: #161b26; }
+.footer_key   { fg: #10131c; bg: #e2b714; mods: bold; }
+.footer_label { fg: #c9d6e3; bg: #161b26; }
